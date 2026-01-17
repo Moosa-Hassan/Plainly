@@ -30,6 +30,6 @@ def explain(req: ExplainRequest):
         raise HTTPException(status_code=400, detail="Text required")
     try:
         response = explain_text(req.mode,req.text)
-        return {"result": response.output_text.strip()}
+        return {"result": response.strip()}
     except Exception:
         raise HTTPException(status_code=500, detail="AI failed")
