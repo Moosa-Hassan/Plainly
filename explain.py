@@ -1,10 +1,12 @@
 from config import GEMINI_API_KEY
 from google import genai
 
+## simple module to explain a text
+
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def summarize_text(mode,text):
+def explain_text(mode,text):
     system_prompt = f"""
     Rewrite provided text such that an everyday person would be able to understand it.
     Guidelines:
@@ -26,5 +28,5 @@ def summarize_text(mode,text):
     response = client.models.generate_content(
         model="models/gemini-2.5-flash",
         contents=system_prompt
-    )
+    ) # a request send to gemini
     return response.text
