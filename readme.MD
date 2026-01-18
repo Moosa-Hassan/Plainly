@@ -1,6 +1,12 @@
-# Plainly (NoJargon)
+# Plainly
 
-Plainly is a two-service app: a FastAPI backend that simplifies text, and a Streamlit frontend for a simple UI.
+Plainly turns jargon-heavy text into clearer language. A FastAPI backend handles the rewrite, and a Streamlit frontend provides a friendly UI. You paste text, choose how simple you want it, and get a concise, human-readable explanation back.
+
+## What it does
+- Accepts any pasted text (technical, legal, academic, etc.).
+- Lets you pick a simplicity level: `very_simple`, `simple`, or `normal`.
+- Sends the request to the backend `/explain` endpoint, which returns a cleaned-up explanation.
+- Shows the result instantly in the UI so you can copy or iterate.
 
 ## Requirements
 - Docker and Docker Compose (recommended for quickest start)

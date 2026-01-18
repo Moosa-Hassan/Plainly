@@ -19,6 +19,7 @@ text = st.text_area(
     placeholder="Example: The system utilizes asynchronous event-driven architecture..."
 )
 
+
 mode = st.selectbox(
     "Choose simplicity mode",
     ["very_simple", "simple", "normal"]
