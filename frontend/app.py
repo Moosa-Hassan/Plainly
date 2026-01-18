@@ -1,5 +1,8 @@
+import os
 import streamlit as st
 import requests
+
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 st.set_page_config(
     page_title="Plainly",
@@ -28,7 +31,7 @@ if st.button("Explain"):
         with st.spinner("Explaining in human language..."):
             try:
                 response = requests.post(
-                    "http://127.0.0.1:8000/explain",
+                    f"{BACKEND_URL}/explain",
                     json={
                         "text": text,
                         "mode": mode
